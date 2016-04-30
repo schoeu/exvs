@@ -1,19 +1,96 @@
-extends base
+extends ./common/base
+block header
+  link(rel='stylesheet', href='/stylesheets/index.css')
 
 block content
-  form(action='/login' method='POST')
-    lable(for='username') 用户
-    input(type='text' name='username' id='username')
+  div(class="vs_wrap")
+    p(class='vs_title') 越努力，越幸运
 
-    lable(for='password') 密码
-    input(type='text' name='password' id='password')
+    article(class='vs_des')
+      span(class='vs_des_fwd') Yesterday
+      span  is a memory tommorrow is a dream so live for today just do it right now. I believe if you can dream it you can make it, if you do you will win if you don't you won't believe in youself trust youself try your best. don't give up,never give in, never lose hope,never say impossible.
 
-    input(type='submit' value='确认' id='submit')
-  div(class='vs_hd_btn')
-  a(href='/users/aboutme') 关于我
+    p
+      a(href='/users/aboutme' class='vs_aboutme') More about me
 
-  a(href='/users/pinfo') 编辑个人信息
-  script.
+    article(class='vs_bg_word')
+      section(class='vs_articles')
+        div(class='vs_arts_wrap')
+          div(class='vs_arts_ctt')
+            div(class='vs_art_items')
+              div(class='vs_art_img')
+                img(src='http://dummyimage.com/600x400/000/fff')
+                div(class='vs_art_shadow')
+                  p(class='vs_items_title') 作品名称
+                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
+                  p(class='vs_items_pubtime') 发布时间：
+                    span 2小时前
+              p(class='vs_items_maintitle') 原创作品-平面
+            div(class='vs_art_items')
+              div(class='vs_art_img')
+                img(src='http://dummyimage.com/600x400/000/fff')
+                div(class='vs_art_shadow')
+                  p(class='vs_items_title') 作品名称
+                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
+                  p(class='vs_items_pubtime') 发布时间：
+                    span 2小时前
+              p(class='vs_items_maintitle') 原创作品-平面
+            div(class='vs_art_items')
+              div(class='vs_art_img')
+                img(src='http://dummyimage.com/600x400/000/fff')
+                div(class='vs_art_shadow')
+                  p(class='vs_items_title') 作品名称
+                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
+                  p(class='vs_items_pubtime') 发布时间：
+                    span 2小时前
+              p(class='vs_items_maintitle') 原创作品-平面
+            div(class='vs_art_items')
+              div(class='vs_art_img')
+                img(src='http://dummyimage.com/600x400/000/fff')
+                div(class='vs_art_shadow')
+                  p(class='vs_items_title') 作品名称
+                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
+                  p(class='vs_items_pubtime') 发布时间：
+                    span 2小时前
+              p(class='vs_items_maintitle') 原创作品-平面
+          div(class='vs_arts_ctt')
+            div(class='vs_art_items')
+              div(class='vs_art_img')
+                img(src='http://dummyimage.com/600x400/000/fff')
+                div(class='vs_art_shadow')
+                  p(class='vs_items_title') 作品名称
+                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
+                  p(class='vs_items_pubtime') 发布时间：
+                    span 2小时前
+              p(class='vs_items_maintitle') 原创作品-平面
+            div(class='vs_art_items')
+              div(class='vs_art_img')
+                img(src='http://dummyimage.com/600x400/000/fff')
+                div(class='vs_art_shadow')
+                  p(class='vs_items_title') 作品名称
+                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
+                  p(class='vs_items_pubtime') 发布时间：
+                    span 2小时前
+              p(class='vs_items_maintitle') 原创作品-平面
+            div(class='vs_art_items')
+              div(class='vs_art_img')
+                img(src='http://dummyimage.com/600x400/000/fff')
+                div(class='vs_art_shadow')
+                  p(class='vs_items_title') 作品名称
+                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
+                  p(class='vs_items_pubtime') 发布时间：
+                    span 2小时前
+              p(class='vs_items_maintitle') 原创作品-平面
+            div(class='vs_art_items')
+              div(class='vs_art_img')
+                img(src='http://dummyimage.com/600x400/000/fff')
+                div(class='vs_art_shadow')
+                  p(class='vs_items_title') 作品名称
+                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
+                  p(class='vs_items_pubtime') 发布时间：
+                    span 2小时前
+              p(class='vs_items_maintitle') 原创作品-平面
 
 
-
+        div(class='vs_more_ctt')
+          button(class='vs_getmore') 加载更多

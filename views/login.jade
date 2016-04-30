@@ -1,0 +1,15 @@
+extends ./common/base
+block header
+    link(rel='stylesheet', href='/stylesheets/login.css')
+
+block content
+    section.vs_login_shadow
+        article.vs_login_logincenter
+            form#vs_login_form(method='POST', action='/login')
+                p.vs_logipts
+                    span.vs_login_nameicon
+                    input#username(type='text', value='', placeholder='用户名', name='username')
+                p.vs_logipts
+                    span.vs_login_pdicon
+                    input#password(type='password', value='', placeholder='密码', name='password')
+                input#vs_login_submit(type='submit', value='登录')

@@ -106,7 +106,7 @@ body,.vs_hd_showmenu b{
 }
 .vs_li_title>p:last-child{
     font-size: 13px;
-    line-height: 13px;
+    line-height: 23px;
     margin-bottom: 10px;
     color: rgba(201, 214, 223, 0.38);
 }
@@ -121,7 +121,7 @@ body,.vs_hd_showmenu b{
     top: 2px;
 }
 .vs_menu_ul>li:not(.vs_li_title)>p:last-child{
-    line-height: 12px;
+    line-height: 22px;
     margin-bottom: 10px;
     font-size: 12px;
     color: rgba(201, 214, 223, 0.38);

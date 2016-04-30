@@ -1,20 +1,9 @@
-extends layout
-block headcontent
+extends ./common/base
+block header
     link(rel='stylesheet', href='/stylesheets/articles.css')
 
 block content
-    header
-        div(class='vs_hd_btn vs_hd_mn')
-            span #{username}
-            ul.vs_hd_menu
-                li.vs_hd_editart
-                    a 编辑作品
-                li.vs_hd_pinfo
-                    a(href='/users/pinfo') 个人信息
-        span(class='vs_hd_btn iconfont vs_hd_search') &#xe602;
-        span(class='vs_hd_btn iconfont') &#xe629;
-
-    form(action='/users/articles' method='POST' id='va_art_form' enctype='multipart/form-data')
+    form(action='/articles/edit' method='POST' id='va_art_form' enctype='multipart/form-data')
         p.va_art_area
             lable(for='title') 作品名称
             input(type='text' name='title' id='title')

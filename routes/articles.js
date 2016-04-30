@@ -3,10 +3,17 @@
  */
 var express = require('express');
 var router = express.Router();
+var login = require('../logic/login');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Express' });
+/**
+ * 编辑作品
+ * */
+router.get('/edit', function(req, res, next) {
+    login(req, res, function (u) {
+        res.render('edit_article', {username: u});
+    }, function () {
+        res.render('login');
+    });
 });
 
 module.exports = router;

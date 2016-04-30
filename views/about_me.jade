@@ -1,21 +1,9 @@
-//
-   Created by baidu on 16/1/17.
-
-extends layout
-block headcontent
+extends ./common/base
+block header
     link(rel='stylesheet', href='/stylesheets/about.css')
 
 block content
     div(class='vs_about_wrap')
-        header
-            span(class='vs_hd_btn') #{local.username}
-            span(class='vs_hd_btn iconfont vs_hd_search') &#xe602;
-            span(class='vs_hd_btn iconfont') &#xe629;
-        article(class='vs_about_icon')
-            p(class='vs_abicon_hd') 关于我
-            p(class='vs_abicon_subhd') About Me
-            div(class='vs_abicon_sign')
-
         section(class='vs_about_info')
             div
                img(class='vs_about_img' src='http://dummyimage.com/400x600/000/fff')
@@ -23,19 +11,19 @@ block content
             div(class='vs_about_infoarea')
                 p(class='vs_about_inforow')
                     span 昵称：
-                    span #{local.username}
+                    span #{username}
                 p(class='vs_about_inforow')
                     span QQ：
-                    span #{local.qq}
+                    span #{qq}
                 p(class='vs_about_inforow')
                     span 邮箱：
-                    span #{local.email}
+                    span #{email}
                 p(class='vs_about_inforow')
                     span 技能：
-                    span #{local.skills}
+                    span #{skills}
                 p(class='vs_about_inforow')
                     span 资历：
-                    span #{local.years}
+                    span #{years}
                 p(class='vs_about_inforow')
                     span 自我介绍：
-                    span #{local.description}
+                    span #{description}

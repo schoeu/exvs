@@ -1,29 +1,3 @@
-body{
-    background-color: rgb(240,245,249);
-}
-.vs_hd_btn{
-    display: inline-block;
-    width: 7rem;
-    text-align: center;
-    border: 1px solid rgb(82,97,107);
-    margin-left: 1.28rem;
-    color: rgb(82,97,107);
-    vertical-align: middle;
-    font-size: 2rem;
-}
-header{
-    line-height: 4rem;
-    text-align: right;
-    margin-top: 1.6rem;
-    font-family: 'webfont';
-}
-.vs_about_wrap{
-    width: 70%;
-    margin: 0 auto;
-}
-.vs_hd_search{
-    font-size: 2.4rem;
-}
 .vs_about_icon{
     position: relative;
     width: 10rem;

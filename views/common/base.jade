@@ -1,12 +1,11 @@
 doctype html
-  html(lang='en')
+html(lang='en')
    head
       title= title
-      link(rel='stylesheet', href='/stylesheets/style.css')
       meta(charset='UTF-8')
-      link(rel='stylesheet', type='text/css', href='/static/css/normalize.css')
-      link(rel='stylesheet', type='text/css', href='/static/css/main.css')
-      link(rel='stylesheet', type='text/css', href='/static/css/header.css')
+      link(rel='stylesheet', type='text/css', href='/stylesheets/normalize.css')
+      link(rel='stylesheet', type='text/css', href='/stylesheets/main.css')
+      link(rel='stylesheet', type='text/css', href='/stylesheets/header.css')
       block header
    body
       header.vs_header_wrap
@@ -16,25 +15,20 @@ doctype html
           b
           b
       block content
-      script(src='/static/js/j220.min.js')
+      script(src='/javascripts/j220.min.js')
       block footer
       div.vs_menu_silide
         ul.vs_menu_ul
           li.vs_li_title
             p
-              a(href='/index/info') 关于我
+                a(href='/') 主页
             p
-              a(href='/index/info') More about me
-          li
-            p
-              a(href='/index/info') 联系我
-            p
-              a(href='/index/info') contact me
+                a(href='/') Main page
           li.vs_li_title
             p
-              a(href='') 作品集
+              a(href='javascript:void(0);') 作品集
             p
-              a(href='') articles
+              a(href='javascript:void(0);') articles
           li
             p
               a(href='') GUI作品集
@@ -52,16 +46,26 @@ doctype html
               a(href='') Graphic Collections
           li.vs_li_title
             p
-              a(href='/article/edit') 编辑作品
+              a(href='/users/aboutme') 关于我
             p
-              a(href='/article/edit') Edit articles
-          li.vs_li_title
-            p
-              a(href='/index/info') 编辑个人信息
-            p
-              a(href='/index/info') Edit personal info
+              a(href='/users/aboutme') More about me
+          if username
+              li.vs_li_title
+                  p
+                      a(href='javascript:void(0);') 编辑
+                  p
+                      a(href='javascript:void(0);') Edit
+              li
+                p
+                  a(href='/articles/edit') 编辑作品
+                p
+                  a(href='/articles/edit') Edit articles
+              li
+                p
+                  a(href='/users/edit') 编辑个人信息
+                p
+                  a(href='/users/edit') Edit personal info
           section.vs_menu_tree
-      script(src='/static/js/j220.min.js')
       script.
             $('.vs_menu_silide').height($(window).height());
             $header_wrap = $('.vs_header_wrap');

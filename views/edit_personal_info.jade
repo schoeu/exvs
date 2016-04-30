@@ -1,19 +1,9 @@
-extends layout
-block headcontent
+extends ./common/base
+block header
     link(rel='stylesheet', href='/stylesheets/pinfo.css')
 
 block content
-    header
-        div(class='vs_hd_btn vs_hd_mn')
-            ul.vs_hd_menu
-                li.vs_hd_editart
-                    a 编辑作品
-                li.vs_hd_pinfo
-                    a(href='/users/pinfo') 个人信息
-        span(class='vs_hd_btn iconfont vs_hd_search') &#xe602;
-        span(class='vs_hd_btn iconfont') &#xe629;
-
-    form(action='/users/pinfo' method='POST' id='va_pinfo_form')
+    form(action='/users/edit' method='POST' id='va_pinfo_form')
         p.va_pinfo_area
             lable(for='nickname') 昵称
             input(type='text' name='nickname' id='nickname')
