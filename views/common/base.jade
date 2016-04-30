@@ -1,0 +1,73 @@
+doctype html
+  html(lang='en')
+   head
+      title= title
+      link(rel='stylesheet', href='/stylesheets/style.css')
+      meta(charset='UTF-8')
+      link(rel='stylesheet', type='text/css', href='/static/css/normalize.css')
+      link(rel='stylesheet', type='text/css', href='/static/css/main.css')
+      link(rel='stylesheet', type='text/css', href='/static/css/header.css')
+      block header
+   body
+      header.vs_header_wrap
+        span.vs_hd_btn.iconfont.vs_hd_search 
+        span.vs_hd_btn.vs_hd_showmenu
+          b
+          b
+          b
+      block content
+      script(src='/static/js/j220.min.js')
+      block footer
+      div.vs_menu_silide
+        ul.vs_menu_ul
+          li.vs_li_title
+            p
+              a(href='/index/info') 关于我
+            p
+              a(href='/index/info') More about me
+          li
+            p
+              a(href='/index/info') 联系我
+            p
+              a(href='/index/info') contact me
+          li.vs_li_title
+            p
+              a(href='') 作品集
+            p
+              a(href='') articles
+          li
+            p
+              a(href='') GUI作品集
+            p
+              a(href='') GUI Collections
+          li
+            p
+              a(href='') 手绘作品集
+            p
+              a(href='') Hand-painted Collections
+          li
+            p
+              a(href='') 平面作品集
+            p
+              a(href='') Graphic Collections
+          li.vs_li_title
+            p
+              a(href='/article/edit') 编辑作品
+            p
+              a(href='/article/edit') Edit articles
+          li.vs_li_title
+            p
+              a(href='/index/info') 编辑个人信息
+            p
+              a(href='/index/info') Edit personal info
+          section.vs_menu_tree
+      script(src='/static/js/j220.min.js')
+      script.
+            $('.vs_menu_silide').height($(window).height());
+            $header_wrap = $('.vs_header_wrap');
+            var $body = $('body');
+            $('.vs_hd_showmenu').on('click', function () {
+                $body.toggleClass('vs_ftrans');
+                $header_wrap.toggleClass('vs_show_type');
+            });
+  

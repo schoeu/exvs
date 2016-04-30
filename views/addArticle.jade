@@ -1,0 +1,49 @@
+extends layout
+block headcontent
+    link(rel='stylesheet', href='/stylesheets/articles.css')
+
+block content
+    header
+        div(class='vs_hd_btn vs_hd_mn')
+            span #{username}
+            ul.vs_hd_menu
+                li.vs_hd_editart
+                    a 编辑作品
+                li.vs_hd_pinfo
+                    a(href='/users/pinfo') 个人信息
+        span(class='vs_hd_btn iconfont vs_hd_search') &#xe602;
+        span(class='vs_hd_btn iconfont') &#xe629;
+
+    form(action='/users/articles' method='POST' id='va_art_form' enctype='multipart/form-data')
+        p.va_art_area
+            lable(for='title') 作品名称
+            input(type='text' name='title' id='title')
+        p.va_art_area
+            lable(for='classify_first') 作品分类
+            select(type='text' name='classify_first' id='classify_first')
+                option(value='0') 临摹作品
+                option(value='1') 原创作品
+            select(type='text' name='classify_second' id='classify_second')
+                option(value='0') 平面作品
+                option(value='1') GUI作品
+                option(value='2') 手绘作品
+        p.va_art_area
+            lable(for='description') 作品说明
+            textarea(type='text' name='description' id='description')
+        p.va_art_area
+            lable(for='images') 上传图片
+            input(type='file' name='images' id='images' multiple='multiple')
+        p.va_art_area
+            lable(for='date') 创作时间
+            input(type='date' name='date' id='date')
+        p.va_art_area.va_art_safe
+            lable(for='isSafe') 防盗设计
+            input(type='checkbox' name='isSafe' id='isSafe')
+            span 防盗链
+        p.va_art_area
+            lable(for='authorization') 作品授权
+            select(for='authorization' id='authorization' name='authorization')
+                option(name='0') 禁止商业使用
+        p.va_art_area
+            lable(for='next')
+            input(type='submit' value='下一步' id='next')

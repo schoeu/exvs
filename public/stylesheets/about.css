@@ -1,0 +1,73 @@
+body{
+    background-color: rgb(240,245,249);
+}
+.vs_hd_btn{
+    display: inline-block;
+    width: 7rem;
+    text-align: center;
+    border: 1px solid rgb(82,97,107);
+    margin-left: 1.28rem;
+    color: rgb(82,97,107);
+    vertical-align: middle;
+    font-size: 2rem;
+}
+header{
+    line-height: 4rem;
+    text-align: right;
+    margin-top: 1.6rem;
+    font-family: 'webfont';
+}
+.vs_about_wrap{
+    width: 70%;
+    margin: 0 auto;
+}
+.vs_hd_search{
+    font-size: 2.4rem;
+}
+.vs_about_icon{
+    position: relative;
+    width: 10rem;
+    border: 1px solid rgb(82,97,107);
+    padding: 1.5rem;
+    color: rgb(82,97,107);
+}
+.vs_abicon_hd{
+    font-size: 4rem;
+    margin: 0;
+}
+.vs_abicon_subhd{
+    margin: 1rem 0 0 0;
+}
+.vs_abicon_sign{
+    position: absolute;
+    width: 5.5rem;
+    height: 3.5rem;
+    background-color: rgb(82,97,107);
+    right: -1.5rem;
+    bottom: -1.5rem;
+    border: .5rem solid rgb(240,245,249);
+}
+.vs_about_info{
+    position: relative;
+    width: 75%;
+    margin: 5rem auto;
+}
+.vs_about_info>div:first-child {
+    width: 34%;
+}
+.vs_about_img{
+    width: 100%;
+}
+.vs_about_infoarea{
+    position: absolute;
+    top: 0;
+    padding-left: 37%;
+}
+.vs_about_inforow{
+    margin: 0;
+    line-height: 2rem;
+}
+.vs_about_inforow>span:first-child {
+    font-weight: bold;
+}
+

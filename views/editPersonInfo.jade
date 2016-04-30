@@ -1,0 +1,44 @@
+extends layout
+block headcontent
+    link(rel='stylesheet', href='/stylesheets/pinfo.css')
+
+block content
+    header
+        div(class='vs_hd_btn vs_hd_mn')
+            ul.vs_hd_menu
+                li.vs_hd_editart
+                    a 编辑作品
+                li.vs_hd_pinfo
+                    a(href='/users/pinfo') 个人信息
+        span(class='vs_hd_btn iconfont vs_hd_search') &#xe602;
+        span(class='vs_hd_btn iconfont') &#xe629;
+
+    form(action='/users/pinfo' method='POST' id='va_pinfo_form')
+        p.va_pinfo_area
+            lable(for='nickname') 昵称
+            input(type='text' name='nickname' id='nickname')
+        p.va_pinfo_area
+            lable(for='qq') QQ
+            input(type='text' name='qq' id='qq')
+        p.va_pinfo_area
+            lable(for='email') 邮箱
+            input(type='text' name='email' id='email')
+        p.va_pinfo_area
+            lable(for='userhob') 爱好
+            textarea(cols=60 rows=3 name='userhob' id='userhob')
+        p.va_pinfo_area
+            lable(for='skills') 技能
+            textarea(cols=60 rows=3 name='skills' id='skills')
+        p.va_pinfo_area
+            lable(for='years') 资历
+            input(type='text' name='years' id='years')
+        p.va_pinfo_area
+            lable(for='description') 自我简介
+            textarea(cols=100 rows=3 name='description' id='description')
+        p.va_pinfo_area
+            lable
+            input(type='submit' value='确认' id='submit')
+
+        div.vs_pinfo_img
+            img(src='http://dummyimage.com/400x600/000/fff')
+
