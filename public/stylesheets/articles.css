@@ -102,6 +102,6 @@ header{
     height: 2rem;
     vertical-align: middle;
 }
-#description{
-    line-height: 4rem;
+div.va_art_area>div{
+    display: inline-block;
 }

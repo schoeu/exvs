@@ -1,0 +1,23 @@
+
+.vs_artdtl_wrap{
+    max-width: 80%;
+    margin: 20px auto;
+    color: rgb(82,97,107);
+}
+.vs_imgs_item{
+    text-align: center;
+    margin: 40px 0;
+}
+
+.vs_article_title>span:first-child {
+    margin-right: 2rem;
+    font-size: 18px;
+    color: rgb(73, 86, 95);
+}
+
+.vs_article_date {
+    margin: 12px 0;
+}
+.vs_imgs_item img{
+    max-width: 100%;
+}

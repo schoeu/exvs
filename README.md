@@ -1,2 +1,2 @@
 # exvs
-> express+mysql+bluebird
+exvs

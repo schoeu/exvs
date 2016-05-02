@@ -3,32 +3,45 @@ block header
     link(rel='stylesheet', href='/stylesheets/pinfo.css')
 
 block content
-    form(action='/users/edit' method='POST' id='va_pinfo_form')
+    form(action='/users/edit' method='POST' id='va_pinfo_form' enctype='multipart/form-data')
         p.va_pinfo_area
             lable(for='nickname') 昵称
-            input(type='text' name='nickname' id='nickname')
+            input(type='text' name='nickname' id='nickname' value='#{nickname}')
         p.va_pinfo_area
             lable(for='qq') QQ
-            input(type='text' name='qq' id='qq')
+            input(type='text' name='qq' id='qq' value='#{qq}')
         p.va_pinfo_area
             lable(for='email') 邮箱
-            input(type='text' name='email' id='email')
+            input(type='text' name='email' id='email' value='#{email}')
         p.va_pinfo_area
             lable(for='userhob') 爱好
-            textarea(cols=60 rows=3 name='userhob' id='userhob')
+            textarea(cols=60 rows=3 name='userlikes' id='userlikes') #{userlikes}
         p.va_pinfo_area
             lable(for='skills') 技能
-            textarea(cols=60 rows=3 name='skills' id='skills')
+            textarea(cols=60 rows=3 name='skills' id='skills') #{skills}
         p.va_pinfo_area
             lable(for='years') 资历
-            input(type='text' name='years' id='years')
+            input(type='text' name='years' id='years' value='#{years}')
         p.va_pinfo_area
             lable(for='description') 自我简介
-            textarea(cols=100 rows=3 name='description' id='description')
+            textarea(cols=100 rows=3 name='description' id='description') #{description}
         p.va_pinfo_area
             lable
             input(type='submit' value='确认' id='submit')
 
-        div.vs_pinfo_img
-            img(src='http://dummyimage.com/400x600/000/fff')
+        div(class='vs_pinfo_img' style='background-image:url(#{headicon})')
+            div.va_pinfo_iconsd
+                span 更换头像
+            input(type='file' name='headicon' class='va_pinfo_hicon' accept="image/*")
+
+block footer
+    script.
+        $vs_pinfo_img = $('.vs_pinfo_img');
+        // IE去shi
+        $('.va_pinfo_hicon').on('change', function () {
+            var file = $(this).get(0);
+            var files = file.files[0];
+            var blob = window.URL.createObjectURL(files);
+            $vs_pinfo_img.css('background-image','url(' + blob + ')');
+        });
 

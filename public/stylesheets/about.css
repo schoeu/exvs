@@ -30,7 +30,10 @@
     width: 34%;
 }
 .vs_about_img{
-    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 285px;
 }
 .vs_about_infoarea{
     position: absolute;

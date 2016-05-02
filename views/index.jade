@@ -12,85 +12,80 @@ block content
 
     p
       a(href='/users/aboutme' class='vs_aboutme') More about me
-
+    - var types = ['临摹作品','原创作品'];
     article(class='vs_bg_word')
       section(class='vs_articles')
         div(class='vs_arts_wrap')
-          div(class='vs_arts_ctt')
-            div(class='vs_art_items')
-              div(class='vs_art_img')
-                img(src='http://dummyimage.com/600x400/000/fff')
-                div(class='vs_art_shadow')
-                  p(class='vs_items_title') 作品名称
-                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
-                  p(class='vs_items_pubtime') 发布时间：
-                    span 2小时前
-              p(class='vs_items_maintitle') 原创作品-平面
-            div(class='vs_art_items')
-              div(class='vs_art_img')
-                img(src='http://dummyimage.com/600x400/000/fff')
-                div(class='vs_art_shadow')
-                  p(class='vs_items_title') 作品名称
-                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
-                  p(class='vs_items_pubtime') 发布时间：
-                    span 2小时前
-              p(class='vs_items_maintitle') 原创作品-平面
-            div(class='vs_art_items')
-              div(class='vs_art_img')
-                img(src='http://dummyimage.com/600x400/000/fff')
-                div(class='vs_art_shadow')
-                  p(class='vs_items_title') 作品名称
-                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
-                  p(class='vs_items_pubtime') 发布时间：
-                    span 2小时前
-              p(class='vs_items_maintitle') 原创作品-平面
-            div(class='vs_art_items')
-              div(class='vs_art_img')
-                img(src='http://dummyimage.com/600x400/000/fff')
-                div(class='vs_art_shadow')
-                  p(class='vs_items_title') 作品名称
-                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
-                  p(class='vs_items_pubtime') 发布时间：
-                    span 2小时前
-              p(class='vs_items_maintitle') 原创作品-平面
-          div(class='vs_arts_ctt')
-            div(class='vs_art_items')
-              div(class='vs_art_img')
-                img(src='http://dummyimage.com/600x400/000/fff')
-                div(class='vs_art_shadow')
-                  p(class='vs_items_title') 作品名称
-                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
-                  p(class='vs_items_pubtime') 发布时间：
-                    span 2小时前
-              p(class='vs_items_maintitle') 原创作品-平面
-            div(class='vs_art_items')
-              div(class='vs_art_img')
-                img(src='http://dummyimage.com/600x400/000/fff')
-                div(class='vs_art_shadow')
-                  p(class='vs_items_title') 作品名称
-                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
-                  p(class='vs_items_pubtime') 发布时间：
-                    span 2小时前
-              p(class='vs_items_maintitle') 原创作品-平面
-            div(class='vs_art_items')
-              div(class='vs_art_img')
-                img(src='http://dummyimage.com/600x400/000/fff')
-                div(class='vs_art_shadow')
-                  p(class='vs_items_title') 作品名称
-                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
-                  p(class='vs_items_pubtime') 发布时间：
-                    span 2小时前
-              p(class='vs_items_maintitle') 原创作品-平面
-            div(class='vs_art_items')
-              div(class='vs_art_img')
-                img(src='http://dummyimage.com/600x400/000/fff')
-                div(class='vs_art_shadow')
-                  p(class='vs_items_title') 作品名称
-                  p(class='vs_items_sddes') 作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介作品简介
-                  p(class='vs_items_pubtime') 发布时间：
-                    span 2小时前
-              p(class='vs_items_maintitle') 原创作品-平面
+          each artobj,key in artlist
+            div(class='vs_arts_ctt')
+              for artitem in artobj
 
+                  div(class='vs_art_items')
+                      div(class='vs_art_img' style='background-image:url(#{artitem.shortcut})')
+                        a(href='/articles/detail/#{artitem.id}')
+                          div(class='vs_art_shadow')
+                            p(class='vs_items_title') #{artitem.title}
+                            p(class='vs_items_sddes') #{artitem.description}
+                            p(class='vs_items_pubtime') 发布时间：
+                              span #{artitem.date}
+                      p(class='vs_items_maintitle')=types[artitem.classify_first]
 
         div(class='vs_more_ctt')
-          button(class='vs_getmore') 加载更多
+          button(class='vs_getmore')
+             if (artlist.length < 8)
+                没有更多了~
+             else
+                加载更多
+block footer
+  script.
+    var s = 0;
+    var typeArr = ['临摹作品', '原创作品'];
+    $('.vs_getmore').on('click', function () {
+      $.ajax({
+        url: '/getarticles/',
+        data: {
+          s: s += 8,
+          e: 8
+        }
+      }).always(function (rs, flag) {
+          var artlist = rs.data || [];
+          if (artlist.length < 8) {
+            flag = 1;
+          }
+          proce(artlist, flag);
+      });
+    });
+
+    function proce(artlist, flag){
+      var str = '';
+
+      if (flag) {
+        $('.vs_getmore').text('没有更多了~').addClass('vs_momre_noeve');
+      }
+
+      for (var i = 0, l = artlist.length; i < l; i++) {
+        var item = artlist[i];
+        if (i % 4 === 0) {
+          str += '<div class="vs_arts_ctt">';
+        }
+        var htmlCodes = [
+          '<div class="vs_art_items">',
+          '<div style="background-image:url(' + item.shortcut + ')" class="vs_art_img">',
+          '<div class="vs_art_shadow">',
+          '<p class="vs_items_title">' + item.title + '</p>',
+          '<p class="vs_items_sddes">' + item.description + '</p>',
+          '<p class="vs_items_pubtime">发布时间：',
+          '<span>' + item.date + '</span>',
+          '</p></div></div><p class="vs_items_maintitle">' + typeArr[item.classify_first] + '</p></div>'
+        ].join('');
+
+        str += htmlCodes;
+        if ((i + 1) % 4 == 0 || (i == l - 1)) {
+          str += '</div>';
+        }
+      }
+
+      if (str) {
+        $('.vs_arts_wrap').append(str);
+      }
+    }

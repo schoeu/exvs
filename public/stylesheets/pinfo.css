@@ -29,6 +29,40 @@ body{
     right: 1rem;
     top: 0;
     width: 16rem;
+    overflow: hidden;
+    height: 25rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.va_pinfo_hicon{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.va_pinfo_iconsd{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+    opacity: 0;
+    background-color: rgba(0,0,0,.2);
+    text-align: center;
+    font-size: 2.5rem;
+    color: #FFF;
+    display: table;
+}
+.vs_pinfo_img:hover .va_pinfo_iconsd{
+    opacity: 1;
+}
+.va_pinfo_iconsd:hover~input{
+    opacity: 0;
+}
+.va_pinfo_iconsd span{
+    display: table-cell;
+    vertical-align: middle;
 }
 .vs_pinfo_img img{
     width: 100%;
@@ -36,57 +70,4 @@ body{
 #submit {
     background-color: rgb(82,96,106);
     color: rgb(240,245,249);
-}
-
-.vs_hd_btn{
-    display: inline-block;
-    width: 7rem;
-    text-align: center;
-    border: 1px solid rgb(82,97,107);
-    margin-left: 1.28rem;
-    color: rgb(82,97,107);
-    vertical-align: middle;
-    font-size: 2rem;
-    margin-top: 1rem;
-}
-header{
-    line-height: 4rem;
-    text-align: right;
-    background-color: rgb(201,215,224);
-    height: 6rem;
-    margin-bottom: 2rem;
-    padding-right: 10rem;
-}
-.vs_wrap{
-    width: 70%;
-    margin: 0 auto;
-    margin-top: 1.6rem;
-}
-.vs_hd_search{
-    font-size: 2.4rem;
-}
-.vs_hd_menu{
-    position: absolute;
-    list-style: none;
-    display: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-    background-color: rgb(82,97,107);
-    color: rgb(201,214,223);
-    font-size: 1.5rem;
-}
-.vs_hd_menu a{
-    display: block;
-    color: inherit;
-    text-decoration: none;
-}
-.vs_hd_menu>li{
-    padding: 0 1rem;
-    border-bottom: 1px solid;
-    line-height: 3rem;
-}
-.vs_hd_mn:hover .vs_hd_menu{
-    -webkit-animation: login_show .6s;
-    animation: login_show .6s;
 }
