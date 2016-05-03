@@ -1,2 +1,3 @@
 # exvs
-exvs
+> express + jade + mysql + bluebird 
+
