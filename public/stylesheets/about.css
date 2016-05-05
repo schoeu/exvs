@@ -1,9 +1,9 @@
 .vs_about_icon{
     position: relative;
     width: 10rem;
-    border: 1px solid rgb(82,97,107);
+    border: 1px solid rgb(32,182,250);
     padding: 1.5rem;
-    color: rgb(82,97,107);
+    color: rgb(32,182,250);
 }
 .vs_abicon_hd{
     font-size: 4rem;
@@ -16,10 +16,10 @@
     position: absolute;
     width: 5.5rem;
     height: 3.5rem;
-    background-color: rgb(82,97,107);
+    background-color: rgb(32,182,250);
     right: -1.5rem;
     bottom: -1.5rem;
-    border: .5rem solid rgb(240,245,249);
+    border: .5rem solid rgb(255,255,255);
 }
 .vs_about_info{
     position: relative;

@@ -5,13 +5,13 @@
 }
 #va_art_form select {
     border: none;
-    background-color: rgb(240,245,249);
-    color: rgb(82,97,107);
+    background-color: rgb(255,255,255);
+    color: rgb(32,182,250);
     line-height: 2rem;
     height: 2rem;
 }
 body{
-    background-color: rgb(240,245,249);
+    background-color: rgb(255,255,255);
 }
 .va_art_area>lable{
     display: inline-block;
@@ -22,8 +22,8 @@ body{
     line-height: 2rem;
 }
 .va_art_area input,.va_art_area textarea{
-    border: 1px solid rgb(82,97,107);
-    background-color: rgb(240,245,249);
+    border: 1px solid rgb(32,182,250);
+    background-color: rgb(255,255,255);
     line-height: 2rem;
     min-width: 18rem;
     resize: none;
@@ -42,16 +42,16 @@ body{
 }
 #submit {
     background-color: rgb(82,96,106);
-    color: rgb(240,245,249);
+    color: rgb(255,255,255);
 }
 
 .vs_hd_btn{
     display: inline-block;
     width: 7rem;
     text-align: center;
-    border: 1px solid rgb(82,97,107);
+    border: 1px solid rgb(32,182,250);
     margin-left: 1.28rem;
-    color: rgb(82,97,107);
+    color: rgb(32,182,250);
     vertical-align: middle;
     font-size: 2rem;
     margin-top: 1rem;
@@ -79,8 +79,8 @@ header{
     padding: 0;
     margin: 0;
     text-align: left;
-    background-color: rgb(82,97,107);
-    color: rgb(201,214,223);
+    background-color: rgb(32,182,250);
+    color: rgb(242,249,252);
     font-size: 1.5rem;
 }
 .vs_hd_menu a{

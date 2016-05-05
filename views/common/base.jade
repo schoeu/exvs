@@ -1,19 +1,20 @@
 doctype html
 html(lang='en')
    head
-      title= title
+      title
       meta(charset='UTF-8')
       link(rel='stylesheet', type='text/css', href='/stylesheets/normalize.css')
       link(rel='stylesheet', type='text/css', href='/stylesheets/main.css')
       link(rel='stylesheet', type='text/css', href='/stylesheets/header.css')
       block header
    body
-      header.vs_header_wrap
-        span.vs_hd_btn.iconfont.vs_hd_search 
-        span.vs_hd_btn.vs_hd_showmenu
-          b
-          b
-          b
+      div.vs_hd_part
+        header.vs_header_wrap
+          span.vs_hd_btn.iconfont.vs_hd_search 
+          span.vs_hd_btn.vs_hd_showmenu
+            b
+            b
+            b
       block content
       script(src='/javascripts/j220.min.js')
       block footer
