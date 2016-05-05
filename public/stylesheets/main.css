@@ -44,3 +44,8 @@ a {
     color: inherit;
     text-decoration: none;
 }
+.vs_links_foot{
+    height: 8rem;
+    background-color: rgb(242,249,252);
+    margin: 10rem;
+}

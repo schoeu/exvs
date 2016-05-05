@@ -33,9 +33,8 @@
 }
 .vs_bg_word{
     font-weight: bold;
-    position: absolute;
-    left: 0;
-    width: 100%;
+    margin-left: -22%;
+    margin-right: -22%;
     background-image: url(/images/article.png);
     background-position: top;
     background-repeat: no-repeat;
@@ -113,6 +112,7 @@
     border: none;
     width: 80%;
     height: 4rem;
+    /* margin: 20px auto; */
     line-height: 4rem;
     background-color: rgb(32,182,250);
     color: #FFF;
