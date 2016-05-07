@@ -8,7 +8,7 @@ module.exports = {
     parseTime: function(date) {
         date = date || Date.now();
         var str = '';
-        var timetext = (Date.now() - date) / 1000;
+        var timetext = (Date.now() - date);
         timetext = timetext < 0 ? 0 : timetext;
         if (timetext < 60) {
             str = '刚刚';

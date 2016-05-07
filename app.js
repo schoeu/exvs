@@ -26,7 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'schoeu',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: {maxAge: 86400000}
 }));
 
 app.use('/', routes);

@@ -27,7 +27,7 @@ router.get('/', function(req, res, next) {
       artObjList.push(artlist.slice(4*j, 4*(j+1)));
     }
 
-    res.render('index', {username: username, artlist: artObjList});
+    res.render('index', {username: username, artlist: artObjList, length:artlist.length});
   }).catch(function(e){
     throw e;
   });

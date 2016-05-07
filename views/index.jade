@@ -32,10 +32,10 @@ block content
 
         div(class='vs_more_ctt')
           button(class='vs_getmore')
-             if (artlist.length < 8)
-                没有更多了~
+             if (length < 8)
+                span 没有更多了~
              else
-                加载更多
+                span 加载更多
 block footer
   script.
     var s = 0;
@@ -70,13 +70,13 @@ block footer
         }
         var htmlCodes = [
           '<div class="vs_art_items">',
-          '<div style="background-image:url(' + item.shortcut + ')" class="vs_art_img">',
+          '<div style="background-image:url(' + item.shortcut + ')" class="vs_art_img"><a href="/articles/detail/' + item.id + '">',
           '<div class="vs_art_shadow">',
           '<p class="vs_items_title">' + item.title + '</p>',
           '<p class="vs_items_sddes">' + item.description + '</p>',
           '<p class="vs_items_pubtime">发布时间：',
           '<span>' + item.date + '</span>',
-          '</p></div></div><p class="vs_items_maintitle">' + typeArr[item.classify_first] + '</p></div>'
+          '</p></div></a></div><p class="vs_items_maintitle">' + typeArr[item.classify_first] + '</p></div>'
         ].join('');
 
         str += htmlCodes;
