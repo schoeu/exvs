@@ -94,6 +94,7 @@ router.post('/edit', function(req, res, next) {
             var is_success = rows.affectedRows || 0;
             if (is_success > 0) {
                 res.redirect('/');
+                imagesPath = [];
             }
         });
     });
@@ -123,9 +124,6 @@ router.get('/detail/:id', function(req, res, next) {
         for (var i=0;i<rows.length;i++) {
             rows[i].date = utils.parseTime(+new Date(rows[i].date));
             var imligt = rows[i].images.split(',');
-            /*imligt.forEach(function (it, i){
-                imligt[i] = '/upload/' + imligt[i];
-            });*/
             rows[i].images = imligt;
             rows[i].articleurl = req.originalUrl;
         }
