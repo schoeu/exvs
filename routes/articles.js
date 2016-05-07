@@ -8,6 +8,9 @@ var formidable = require('formidable');
 var path = require('path');
 var db = require('../dao/dao');
 var utils = require('../utils/utils');
+
+var PRE_PATH = '/upload/';
+
 /**
  * 编辑作品
  * */
@@ -34,7 +37,7 @@ router.post('/uploadsc', function (req, res, next) {
         if (err) {
             throw err;
         }
-        scImagesPath = path.basename(files.file.path) || '';
+        scImagesPath = PRE_PATH + path.basename(files.file.path) || '';
     });
     res.end();
 });
@@ -57,7 +60,7 @@ router.post('/upload', function (req, res, next) {
         }
         var imgPath = files.file.path || '';
 
-        imagesPath.push(path.basename(imgPath));
+        imagesPath.push(PRE_PATH + path.basename(imgPath));
     });
     res.end();
 });
@@ -120,9 +123,9 @@ router.get('/detail/:id', function(req, res, next) {
         for (var i=0;i<rows.length;i++) {
             rows[i].date = utils.parseTime(+new Date(rows[i].date));
             var imligt = rows[i].images.split(',');
-            imligt.forEach(function (it, i){
+            /*imligt.forEach(function (it, i){
                 imligt[i] = '/upload/' + imligt[i];
-            });
+            });*/
             rows[i].images = imligt;
             rows[i].articleurl = req.originalUrl;
         }

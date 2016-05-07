@@ -24,7 +24,7 @@ router.get('/edit', function(req, res, next) {
       }
       var userData = rows[0];
       if (userData) {
-        userData.headicon = '/upload/' + path.basename(userData.headicon);
+        // userData.headicon = '/upload/' + path.basename(userData.headicon);
         res.render('edit_personal_info', userData);
       }
       else {
@@ -90,9 +90,9 @@ router.get('/aboutme', function (req, res, next) {
       throw err;
     }
     rows = rows || [];
-    for (var i=0;i<rows.length;i++) {
+    /*for (var i=0;i<rows.length;i++) {
       rows[i].headicon = '/upload/' + rows[i].headicon;
-    }
+    }*/
 
     var personInfo = rows[0] || {};
 

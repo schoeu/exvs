@@ -5,10 +5,10 @@ module.exports = {
     /**
      * 日期转换
      * */
-    parseTime: function(date) {
-        date = date || Date.now();
+    parseTime: function(time) {
+        time = time || Date.now();
         var str = '';
-        var timetext = (Date.now() - date);
+        var timetext = (Date.now() - time);
         timetext = timetext < 0 ? 0 : timetext;
         if (timetext < 60) {
             str = '刚刚';
@@ -24,6 +24,9 @@ module.exports = {
         }
         else if(timetext > 2592000) {
             str = Math.round(timetext / 86400) + '月前';
+        }
+        else {
+            str = new Date(timetext);
         }
         return str;
     }

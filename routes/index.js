@@ -5,6 +5,8 @@ var Promise = require('bluebird');
 var path = require('path');
 var utils = require('../utils/utils');
 
+var PRE_PATH = '/upload/';
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var username = req.session.islogined;
@@ -13,7 +15,7 @@ router.get('/', function(req, res, next) {
      * 替换数据中图片路径
      * */
     for (var i=0;i<artlist.length;i++) {
-      artlist[i].shortcut = '/upload/' + path.basename(artlist[i].shortcut);
+      artlist[i].shortcut = PRE_PATH + path.basename(artlist[i].shortcut);
       artlist[i].date = utils.parseTime(+new Date(artlist[i].date));
     }
 
@@ -43,7 +45,7 @@ router.get('/getarticles', function (req, res, next) {
      * 替换数据中图片路径
      * */
     for (var i=0;i<lth;i++) {
-      artlist[i].shortcut = '/upload/' + path.basename(artlist[i].shortcut);
+      artlist[i].shortcut = PRE_PATH + path.basename(artlist[i].shortcut);
       artlist[i].date = utils.parseTime(+new Date(artlist[i].date));
     }
     if (lth) {
